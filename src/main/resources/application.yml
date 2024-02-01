@@ -2,6 +2,8 @@ server:
   port: 9000
 
 spring:
+  main:
+    banner-mode: off
   datasource:
     url: jdbc:mysql://140.143.139.250:3306/db_yumi_dms_v1?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&useInformationSchema=true&remarks=true&tinyInt1isBit=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&allowMultiQueries=true&autoReconnect=true&autoReconnectForPools=true&autoReconnectForPools=true&autoReconnectForP
     username: root
