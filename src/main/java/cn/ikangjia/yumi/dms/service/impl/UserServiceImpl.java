@@ -1,5 +1,6 @@
 package cn.ikangjia.yumi.dms.service.impl;
 
+import cn.ikangjia.yumi.dms.api.dto.UserLoginDTO;
 import cn.ikangjia.yumi.dms.domain.entity.UserDO;
 import cn.ikangjia.yumi.dms.domain.mapper.UserMapper;
 import cn.ikangjia.yumi.dms.service.UserService;
@@ -35,5 +36,18 @@ public class UserServiceImpl implements UserService {
             wrapper.like("nickname", nickname);
         }
         return userMapper.selectPage(page, wrapper);
+    }
+
+    @Override
+    public UserDO login(UserLoginDTO loginDTO) {
+        String account = loginDTO.getAccount();
+        String password = loginDTO.getPassword();
+        QueryWrapper<UserDO> wrapper = new QueryWrapper<>();
+        wrapper.eq("account", account);
+        UserDO userDO = userMapper.selectOne(wrapper);
+        if (userDO != null && userDO.getPassword().equals(password)) {
+            return userDO;
+        }
+        throw new RuntimeException("账号或密码错误");
     }
 }

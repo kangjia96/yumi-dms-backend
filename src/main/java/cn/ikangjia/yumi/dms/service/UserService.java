@@ -1,5 +1,6 @@
 package cn.ikangjia.yumi.dms.service;
 
+import cn.ikangjia.yumi.dms.api.dto.UserLoginDTO;
 import cn.ikangjia.yumi.dms.domain.entity.UserDO;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
@@ -12,4 +13,6 @@ public interface UserService {
     UserDO getUser(Long id);
 
     Page<UserDO> getUsers(String nickname, Integer pageNo, Integer pageSize);
+
+    UserDO login(UserLoginDTO loginDTO);
 }

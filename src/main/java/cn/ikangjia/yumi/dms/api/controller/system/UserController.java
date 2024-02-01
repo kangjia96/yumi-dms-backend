@@ -1,12 +1,10 @@
-package cn.ikangjia.yumi.dms.api.controller;
+package cn.ikangjia.yumi.dms.api.controller.system;
 
+import cn.ikangjia.yumi.dms.api.dto.UserLoginDTO;
 import cn.ikangjia.yumi.dms.domain.entity.UserDO;
 import cn.ikangjia.yumi.dms.service.UserService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author kangJia
@@ -30,5 +28,10 @@ public class UserController {
     @GetMapping("/{id}")
     public UserDO getUser(@PathVariable Long id) {
         return userService.getUser(id);
+    }
+
+    @PostMapping("/login")
+    public UserDO login(@RequestBody UserLoginDTO userLoginDTO) {
+        return userService.login(userLoginDTO);
     }
 }
