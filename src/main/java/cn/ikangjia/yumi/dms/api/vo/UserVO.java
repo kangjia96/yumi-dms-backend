@@ -10,20 +10,14 @@ import java.time.LocalDateTime;
 @Data
 public class UserVO {
     private Long id;
-    private String name;
+    private String nickname;
     private String account;
     private String password;
-    private String avatar;
     private String phone;
     private String email;
 
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
-
-    /*
-     * 是否启用，1-启用，2-禁用
-     */
-    private boolean enabled;
 
     private boolean deleted;
 

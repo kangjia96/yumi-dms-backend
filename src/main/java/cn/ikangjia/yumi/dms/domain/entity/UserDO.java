@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @TableName(value = "t_user", excludeProperty={"code"})
 public class UserDO {
     private long id;
-    private String nickName;
+    private String nickname;
     private String account;
     private String password;
     private String code;
