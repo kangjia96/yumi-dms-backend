@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 /**
  * @author kangJia
  * @email ikangjia.cn@outlook.com
- * @since 2024/2/1 15:36
  */
 @Slf4j
 @RestControllerAdvice

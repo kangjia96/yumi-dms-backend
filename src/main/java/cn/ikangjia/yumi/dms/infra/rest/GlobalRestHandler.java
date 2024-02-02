@@ -11,7 +11,6 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 /**
  * @author kangJia
  * @email ikangjia.cn@outlook.com
- * @since 2024/2/1 15:52
  */
 @SuppressWarnings({"all"})
 @RestControllerAdvice

@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author kangJia
  * @email ikangjia.cn@outlook.com
- * @since 2024/2/1 15:12
  */
 @Configuration
 public class MyBatisPlusConfig {

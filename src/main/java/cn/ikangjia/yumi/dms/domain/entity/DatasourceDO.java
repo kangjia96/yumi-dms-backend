@@ -11,22 +11,31 @@ import java.time.LocalDateTime;
  * @email ikangjia.cn@outlook.com
  */
 @Data
-@TableName(value = "t_user", excludeProperty={"code"})
-public class UserDO {
+@TableName("t_datasource")
+public class DatasourceDO {
     private long id;
-    private String nickName;
-    private String account;
-    private String password;
-    private String code;
+    private String name;
+    private String type;
 
-    private String phone;
-    private String email;
-    
+    private String host;
+    private String port;
+    private String username;
+    private String password;
+
+    private String description;
+
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
 
+    /*
+     * 是否启用，1-启用，2-禁用
+     */
+    private boolean enabled;
+
+    /*
+     * 是否逻辑删除，1-删除，0-未删除
+     */
     @TableField("is_deleted")
     private boolean deleted;
-
 }

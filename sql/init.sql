@@ -40,5 +40,6 @@ create table t_datasource (
     description varchar(255) comment '描述',
     create_time datetime comment '创建时间',
     update_time datetime comment '更新时间',
+    enabled tinyint(1) not null default 1 comment '是否启用',
     is_deleted tinyint(1) not null default 0 comment '是否删除'
 ) comment '数据源表';
