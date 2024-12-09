@@ -1,4 +1,4 @@
-package cn.ikangjia.yumi.dms.api.controller.mysql;
+package cn.ikangjia.yumi.dms.api.controller;
 
 import cn.ikangjia.yumi.dms.api.dto.DatabaseAddDTO;
 import cn.ikangjia.yumi.dms.api.dto.DatabaseAlterDTO;
