@@ -1,7 +1,5 @@
 package cn.ikangjia.yumi.dms.service;
 
-import cn.ikangjia.yumi.dms.api.query.PageQuery;
-import cn.ikangjia.yumi.dms.api.vo.DatasourceVO;
 import cn.ikangjia.yumi.dms.api.vo.TestConnectionVO;
 import cn.ikangjia.yumi.dms.domain.entity.DatasourceDO;
 
@@ -15,13 +13,11 @@ public interface DatasourceService {
 
     DatasourceDO getDatasource(Long datasourceId);
 
-    DatasourceVO listDatasource(PageQuery pageQuery);
+    List<DatasourceDO> listDatasource(String keyword);
 
     Boolean updateDatasource(DatasourceDO datasourceDO);
 
     Boolean removeDatasource(Long datasourceId);
-
-    Boolean removeDatasourceBatch(List<Long> datasourceIdList);
 
     Boolean saveDatasource(DatasourceDO datasourceDO);
 

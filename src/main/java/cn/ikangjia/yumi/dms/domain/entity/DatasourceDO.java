@@ -1,6 +1,5 @@
 package cn.ikangjia.yumi.dms.domain.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -15,10 +14,10 @@ import java.time.LocalDateTime;
 public class DatasourceDO {
     private long id;
     private String name;
-    private String type;
+    private int type;
 
     private String host;
-    private String port;
+    private int port;
     private String username;
     private String password;
 
@@ -32,10 +31,4 @@ public class DatasourceDO {
      * 是否启用，1-启用，2-禁用
      */
     private boolean enabled;
-
-    /*
-     * 是否逻辑删除，1-删除，0-未删除
-     */
-    @TableField("is_deleted")
-    private boolean deleted;
 }

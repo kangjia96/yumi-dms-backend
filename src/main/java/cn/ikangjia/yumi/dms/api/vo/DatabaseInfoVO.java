@@ -12,17 +12,17 @@ public class DatabaseInfoVO {
     private DatasourceDO datasourceDO;
 
     private String databaseName;
-    private String collation;
-    private String characterSet;
+    private String collation; // 排序规则
+    private String characterSet; // 字符集
 
-    private String version;
+    private String version; // 数据库版本
 
-    private String databaseDDL;
+    private String databaseDDL; // 数据库DDL
 
-    private String sqlPath;
+    private String sqlPath; // 数据库DDL文件路径
 
-    private String tableCount;
-    private String viewCount;
-    private String procedureCount;
-    private String functionCount;
+    private String tableCount; // 表数量
+    private String viewCount; // 视图数量
+    private String procedureCount; // 存储过程数量
+    private String functionCount; // 函数数量
 }
