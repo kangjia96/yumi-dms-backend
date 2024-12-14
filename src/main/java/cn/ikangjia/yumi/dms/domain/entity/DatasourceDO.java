@@ -24,11 +24,10 @@ public class DatasourceDO {
     private String description;
 
     private LocalDateTime createTime;
-
     private LocalDateTime updateTime;
 
-    /*
-     * 是否启用，1-启用，2-禁用
+    /**
+     * 是否启用，true 为启用
      */
     private boolean enabled;
 }

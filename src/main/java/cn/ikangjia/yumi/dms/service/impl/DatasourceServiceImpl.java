@@ -5,9 +5,7 @@ import cn.ikangjia.yumi.dms.core.MySQLDatasourceUtil;
 import cn.ikangjia.yumi.dms.domain.entity.DatasourceDO;
 import cn.ikangjia.yumi.dms.domain.mapper.DatasourceMapper;
 import cn.ikangjia.yumi.dms.service.DatasourceService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -30,13 +28,8 @@ public class DatasourceServiceImpl implements DatasourceService {
     }
 
     @Override
-    public List<DatasourceDO> listDatasource(String keyword) {
-        QueryWrapper<DatasourceDO> wrapper = new QueryWrapper<>();
-
-        if (StringUtils.hasText(keyword)) {
-            wrapper.like("name", keyword);
-        }
-        return datasourceMapper.selectList( wrapper);
+    public List<DatasourceDO> listDatasource() {
+        return datasourceMapper.selectList(null);
     }
 
     @Override

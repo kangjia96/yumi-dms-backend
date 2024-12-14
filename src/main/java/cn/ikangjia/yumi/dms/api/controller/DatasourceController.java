@@ -35,12 +35,11 @@ public class DatasourceController {
     /**
      * 获取数据源列表
      *
-     * @param keyword 关键字
      * @return 数据源列表
      */
     @GetMapping
-    public List<DatasourceDO> listDatasource(String keyword) {
-        return datasourceService.listDatasource(keyword);
+    public List<DatasourceDO> listDatasource() {
+        return datasourceService.listDatasource();
     }
 
     /**

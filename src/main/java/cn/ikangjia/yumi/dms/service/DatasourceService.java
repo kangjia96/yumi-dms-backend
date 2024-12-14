@@ -13,7 +13,7 @@ public interface DatasourceService {
 
     DatasourceDO getDatasource(Long datasourceId);
 
-    List<DatasourceDO> listDatasource(String keyword);
+    List<DatasourceDO> listDatasource();
 
     Boolean updateDatasource(DatasourceDO datasourceDO);
 
