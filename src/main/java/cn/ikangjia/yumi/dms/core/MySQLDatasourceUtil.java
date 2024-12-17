@@ -25,7 +25,7 @@ public class MySQLDatasourceUtil {
         String username = datasourceDO.getUsername();
         String password = datasourceDO.getPassword();
         String host = datasourceDO.getHost();
-        String port = datasourceDO.getPort();
+        int port = datasourceDO.getPort();
 
         String url = String.format(URL_TEMPLATE, host, port);
         return DriverManager.getConnection(url, username, password);
@@ -42,7 +42,7 @@ public class MySQLDatasourceUtil {
         return testConnection(datasourceDO.getHost(), datasourceDO.getPort(), datasourceDO.getUsername(), datasourceDO.getPassword());
     }
 
-    private static Boolean testConnection(String host, String port, String username, String password) throws SQLException {
+    private static Boolean testConnection(String host, int port, String username, String password) throws SQLException {
         String url = String.format(URL_TEMPLATE, host, port);
         try (Connection connection = DriverManager.getConnection(url, username, password);
              Statement statement = connection.createStatement()) {
