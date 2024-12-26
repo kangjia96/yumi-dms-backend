@@ -10,9 +10,15 @@ import java.util.List;
  */
 @Data
 public class TreeVO {
-    private String nodeKey;
-    private String labelName;
+    private String pKey; // 父节点 key
+
+    private String key;
+    private String label;
+
+    private String type;  // 类型，Database, Folder, Table...
+
     private Integer level;
-    private boolean leaf;
+    private boolean isLeaf;
+
     private List<TreeVO> children;
 }

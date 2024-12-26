@@ -27,8 +27,8 @@ public class TreeUtil {
         itemList.forEach(item -> {
             TreeVO level0 = new TreeVO();
             level0.setLeaf(false);
-            level0.setLabelName(item);
-            level0.setNodeKey(String.format(node_key_level_0_db, datasourceId, item));
+            level0.setLabel(item);
+            level0.setKey(String.format(node_key_level_0_db, datasourceId, item));
             result.add(level0);
         });
 
@@ -38,18 +38,18 @@ public class TreeUtil {
     public static List<TreeVO> buildLevel1(Long datasourceId, String fatherNodeKey) {
         TreeVO table = new TreeVO();
         table.setLeaf(false);
-        table.setLabelName("表");
-        table.setNodeKey(String.format(node_key_level_1_t, datasourceId, fatherNodeKey));
+        table.setLabel("表");
+        table.setKey(String.format(node_key_level_1_t, datasourceId, fatherNodeKey));
 
         TreeVO view = new TreeVO();
         view.setLeaf(false);
-        view.setLabelName("视图");
-        view.setNodeKey(String.format(node_key_level_1_v, datasourceId, fatherNodeKey));
+        view.setLabel("视图");
+        view.setKey(String.format(node_key_level_1_v, datasourceId, fatherNodeKey));
 
         TreeVO procedure = new TreeVO();
         procedure.setLeaf(false);
-        procedure.setLabelName("存储过程");
-        procedure.setNodeKey(String.format(node_key_level_1_p, datasourceId, fatherNodeKey));
+        procedure.setLabel("存储过程");
+        procedure.setKey(String.format(node_key_level_1_p, datasourceId, fatherNodeKey));
 
         List<TreeVO> result = new ArrayList<>();
         result.add(table);
@@ -63,11 +63,11 @@ public class TreeUtil {
         itemList.forEach(item -> {
             TreeVO level2 = new TreeVO();
             level2.setLeaf(true);
-            level2.setLabelName(item);
+            level2.setLabel(item);
             switch (type) {
-                case 0 -> level2.setNodeKey(String.format(node_key_level_2_t, datasourceId, fatherNodeKey, item));
-                case 1 -> level2.setNodeKey(String.format(node_key_level_2_v, datasourceId, fatherNodeKey, item));
-                case 2 -> level2.setNodeKey(String.format(node_key_level_2_p, datasourceId, fatherNodeKey, item));
+                case 0 -> level2.setKey(String.format(node_key_level_2_t, datasourceId, fatherNodeKey, item));
+                case 1 -> level2.setKey(String.format(node_key_level_2_v, datasourceId, fatherNodeKey, item));
+                case 2 -> level2.setKey(String.format(node_key_level_2_p, datasourceId, fatherNodeKey, item));
                 default -> throw new RuntimeException("树结构数据类型解析错误！");
             }
             result.add(level2);
